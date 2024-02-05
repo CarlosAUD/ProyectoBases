@@ -31,11 +31,11 @@ public class Transaccion {
                 frame.dispose();
 
                 JFrame frames = new JFrame("DEPOSITO");
+                frames.setUndecorated(true);
                 frames.setContentPane(new Deposito().depo);
                 frames.setSize(400,350);
                 frames.setLocationRelativeTo(null);
                 frames.setVisible(true);
-
             }
         });
         RETIRORadioButton.addActionListener(new ActionListener() {
@@ -45,10 +45,12 @@ public class Transaccion {
                 frame.dispose();
 
                 JFrame frames = new JFrame("RETIRO");
+                frames.setUndecorated(true);
                 frames.setContentPane(new Retiro().retir);
                 frames.setSize(400,350);
                 frames.setLocationRelativeTo(null);
                 frames.setVisible(true);
+
 
             }
         });
@@ -58,6 +60,7 @@ public class Transaccion {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(VISUALIZARSUSALDORadioButton);
                 frame.dispose();
                 JFrame frames = new JFrame("SALDO");
+                frames.setUndecorated(true);
                 frames.setContentPane(new Saldo().saldo);
                 frames.setSize(400,350);
                 frames.setLocationRelativeTo(null);

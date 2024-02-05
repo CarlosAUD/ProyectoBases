@@ -8,6 +8,9 @@
     <properties>
       <background color="-16250873"/>
     </properties>
+    <clientProperties>
+      <html.disable class="java.lang.Boolean" value="false"/>
+    </clientProperties>
     <border type="none"/>
     <children>
       <vspacer id="ac484">

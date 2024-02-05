@@ -97,6 +97,7 @@ public class Bienvenida {
                     JFrame frame=(JFrame) SwingUtilities.getWindowAncestor(ingresarButton);
                     frame.dispose();
                     JFrame frames = new JFrame("DEPOSITO");
+                    frames.setUndecorated(true);
                     frames.setContentPane(new Transaccion().transaccion);
                     frames.setSize(700,700);
                     frames.setLocationRelativeTo(null);

@@ -106,8 +106,8 @@ public class Retiro {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(MENUButton);
                 frame.dispose();
                 JFrame frames = new JFrame("QUE TRANSACCION VA A REALIZAR");
+                frames.setUndecorated(true);
                 frames.setContentPane(new Transaccion().transaccion);
-                frames.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frames.setSize(400,350);
                 frames.setLocationRelativeTo(null);
                 frames.setVisible(true);
