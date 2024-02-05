@@ -90,8 +90,7 @@ public class Deposito {
                 frames.setContentPane(new Transaccion().transaccion);
                 frames.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frames.setSize(400,350);
-                frames.pack();
-                frame.setLocationRelativeTo(null);
+                frames.setLocationRelativeTo(null);
                 frames.setVisible(true);
             }
         });
@@ -108,17 +107,13 @@ public class Deposito {
         ingresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JTextField texto = new JTextField();
-                JTextField tex = new JTextField();
-                Saldo saldoActual= new Saldo();
+
                 String depos = depotext.getText();
-                texto.setText("0");
-                if (depos.equals("") || depos.equals("0")){
+                if (depos.isEmpty() || depos.equals("0")){
                     JOptionPane.showMessageDialog(null, "Ingrese un valor", "Error", JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
-                    texto.setText(Integer.toString(Integer.parseInt(texto.getText()))+Integer.parseInt(depotext.getText()));
-                    saldoActual.setSaldotextField1(texto);
+                    Saldo.saldoTotal=Saldo.saldoTotal+Integer.parseInt(depos);
                     depotext.setText("");
                     JOptionPane.showMessageDialog(null, "Su deposito fue agregado correctamente", "Deposito correcto", JOptionPane.INFORMATION_MESSAGE);
                 }

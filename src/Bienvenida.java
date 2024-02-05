@@ -98,9 +98,8 @@ public class Bienvenida {
                     frame.dispose();
                     JFrame frames = new JFrame("DEPOSITO");
                     frames.setContentPane(new Transaccion().transaccion);
-                    frame.setSize(700,700);
-                    frames.pack();
-                    frame.setLocationRelativeTo(null);
+                    frames.setSize(700,700);
+                    frames.setLocationRelativeTo(null);
                     frames.setVisible(true);
                 }
                 else{

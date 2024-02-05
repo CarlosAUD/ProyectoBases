@@ -83,8 +83,21 @@ public class Retiro {
         ingresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                retitext.setText(retitext.getText());
-                JOptionPane.showMessageDialog(null, "Su retiro fue exitoso", "Retiro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                String reti = retitext.getText();
+                if (reti.isEmpty() || reti.equals("0")){
+                    JOptionPane.showMessageDialog(null, "Ingrese un valor", "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    if (Saldo.saldoTotal<Integer.parseInt(reti)){
+                        JOptionPane.showMessageDialog(null, "No tiene suficiente saldo", "Error", JOptionPane.INFORMATION_MESSAGE);
+                        retitext.setText("");
+                    }else{
+                        Saldo.saldoTotal=Saldo.saldoTotal-Integer.parseInt(reti);
+                        retitext.setText("");
+                        JOptionPane.showMessageDialog(null, "Su retiro fue exitoso", "Retiro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                }
+
             }
         });
         MENUButton.addActionListener(new ActionListener() {
@@ -96,8 +109,7 @@ public class Retiro {
                 frames.setContentPane(new Transaccion().transaccion);
                 frames.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frames.setSize(400,350);
-                frames.pack();
-                frame.setLocationRelativeTo(null);
+                frames.setLocationRelativeTo(null);
                 frames.setVisible(true);
             }
         });
